@@ -1,13 +1,36 @@
 import axios from "axios";
 
 export const getTodos = async () => {
-  //TO_MODIFY
+  axios.get('/todos')
+  .then(function (response) {
+    // en cas de réussite de la requête
+    console.log(response);
+  })
+  .catch(function (error) {
+    console.log(error);
+  });
 };
 
 export const createTodo = async (formData) => {
-  //TO_MODIFY
+  axios.post('/todos', {
+    name: formData.name,
+    description: formData.description
+  })
+  .then(function (response) {
+    console.log(response);
+  })
+  .catch(function (error) {
+    console.log(error);
+  });
 };
 
 export const deleteTodo = async (todoId) => {
-  //TO_MODIFY
+  axios.delete('/todos/' + todoId)
+
+  .then(function (response) {
+    console.log(response);
+  })
+  .catch(function (error) {
+    console.log(error);
+  });
 };
