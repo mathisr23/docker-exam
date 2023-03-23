@@ -1,5 +1,4 @@
 version: '3.7'
-
 services:
   backend:
     ports: 
@@ -12,6 +11,10 @@ services:
     environment:
       - MYSQL_ROOT_PASSWORD=password
       - MYSQL_DATABASE=examdb
+  frontend:
+    ports: 
+      - '4000:4000'
+    build: ./frontend
 volumes:
   storage:
 
