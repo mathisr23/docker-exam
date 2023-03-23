@@ -5,5 +5,14 @@ services:
     ports: 
       - '4001:4001'
     build: ./backend
+  mysql:
+    image: mysql:8
+    volumes:
+      - storage:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=password
+      - MYSQL_DATABASE=examdb
+volumes:
+  storage:
 
 

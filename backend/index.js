@@ -20,16 +20,15 @@ app.use(express.json());
 app.use(cors());
 
 app.get("/todos", async (req, res) => {
-  //TO_MODIFY
-  res.send([]) // to remove after question 1)
+  res.json({message : "Vous souhaitez accéder aux informations de la piscine n°" + req.params.todos});
 });
 
 app.post("/todos", async (req, res) => {
-  //TO_MODIFY
+  res.json({message : "Ajoute une nouvelle todo à la liste", methode : req.method});
 });
 
 app.delete("/todos/:todoId", async (req, res) => {
-  //TO_MODIFY
+  res.json({message : "Suppression d'une todo dans la liste", methode : req.method});
 });
 
 app.listen(port, () => {
