@@ -1,1 +1,9 @@
-#TO_MODIFY
+version: '3.7'
+
+services:
+  backend:
+    ports: 
+      - '4001:4001'
+    build: ./backend
+
+
