@@ -7,16 +7,12 @@ services:
   mysql:
     image: mysql:8
     volumes:
-      - storage:/var/lib/mysql
-    environment:
-      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
-      - MYSQL_DATABASE=${MYSQL_DATABASE}
+      - storage10:/var/lib/mysql
+    env_file:
+      - .env
   frontend:
     ports: 
       - '4000:4000'
     build: ./frontend    
 volumes:
-  storage:
-
-
-    
+  storage10:
