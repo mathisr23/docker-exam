@@ -9,13 +9,14 @@ services:
     volumes:
       - storage:/var/lib/mysql
     environment:
-      - MYSQL_ROOT_PASSWORD=password
-      - MYSQL_DATABASE=examdb
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+      - MYSQL_DATABASE=${MYSQL_DATABASE}
   frontend:
     ports: 
       - '4000:4000'
-    build: ./frontend
+    build: ./frontend    
 volumes:
   storage:
 
 
+    
